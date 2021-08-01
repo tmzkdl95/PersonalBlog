@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<th:block th:fragment="fragment-sidebar(acitve)">
+
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4" style="background-image: url(../../static/images/bg_1.jpg);">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(../../static/images/default_logo.jpg);"></div>
+                    <h3> 사용자 </h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <h1 th:text="${active}">기본 메세지</h1>
+                <li th:classappend="${active}=='' ? active">
+                    <a href="/"><span class="fa fa-home mr-3"></span> Home </a>
+                </li>
+<!--                <li>-->
+<!--                    <a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Download</a>-->
+<!--                </li>-->
+                <li th:classappend="${active}=='1' ? active">
+                    <a href="/Board/mainBoard"><span class="fa fa-trophy mr-3"></span> 게시판 </a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="fa fa-gift mr-3"></span> Wiki </a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+                </li>
+<!--                <li>-->
+<!--                    <a href="#"><span class="fa fa-support mr-3"></span> Support</a>-->
+<!--                </li>-->
+                <li>
+                    <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                </li>
+            </ul>
+
+        </nav>
+</th:block>
